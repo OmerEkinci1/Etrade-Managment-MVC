@@ -1,0 +1,11 @@
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\And.Etrade.Core.Model.dll.config
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\And.Etrade.Core.Model.dll
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\And.Etrade.Core.Model.pdb
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\EntityFramework.dll
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\EntityFramework.xml
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\obj\Debug\And.Etrade.Core.Model.csprojAssemblyReference.cache
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\obj\Debug\And.Etrade.Core.Model.csproj.CopyComplete
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\obj\Debug\And.Etrade.Core.Model.dll
+D:\Belgelerim\And.Etrade\And.Etrade.Core.Model\obj\Debug\And.Etrade.Core.Model.pdb
