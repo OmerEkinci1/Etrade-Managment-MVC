@@ -1,0 +1,8 @@
+﻿@model IEnumerable<And.Etrade.Core.Model.Entity.Category>
+
+@{
+    foreach (var item in Model)
+    {
+        <li class="item"><a class="list-group-item-heading" href="#">@item.Name</a></li>
+    }
+}
