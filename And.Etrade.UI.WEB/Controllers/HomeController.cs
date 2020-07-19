@@ -1,5 +1,6 @@
 ﻿using And.Etrade.Core.Model;
 using And.Etrade.Core.Model.Entity;
+using And.Etrade.UI.WEB.Controllers.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace And.Etrade.UI.WEB.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AndControllerBase
     {
         AndDB db = new AndDB();
         // GET: Home

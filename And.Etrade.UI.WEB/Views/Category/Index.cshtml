@@ -1,0 +1,60 @@
+﻿@model List<And.Etrade.Core.Model.Entity.Product>
+@{
+    ViewBag.Title = "Index";
+    var category = (And.Etrade.Core.Model.Entity.Category)ViewBag.category;
+}
+
+<h3>Last 5 Product in @category.Name</h3>
+@{
+    foreach (var item in Model)
+    {
+        <div class="productBox">
+            <p class="title"> @item.Name </p>
+            <img id="resim" src="@item.ImageUrl" alt="Alternate Text" />
+            <p>
+                @item.Brand
+            </p>
+            <p>
+                @item.Price.ToString("##.## ₺")
+            </p>
+            <p id="des">
+                @item.Description
+            </p>
+            <a class="btn btn-success" href="/product/@item.Name.Replace(" ","-")/@item.ID"><i class="icon-eye-open"></i>  Detail</a>
+            <a class="btn btn-default" href="#"><i class=""></i>  Add to Basket</a>
+        </div>
+    }
+}
+<div class="row"></div>
+<style>
+    .productBox {
+        width: 300px;
+        height: 450px;
+        float: left;
+        margin: 10px;
+        border: 2px solid #b9b9b9;
+        padding: 10px;
+    }
+
+        .productBox img {
+            width: 260px;
+            height: 250px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .productBox p {
+            padding-top: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    #des {
+        padding-top: 10px;
+    }
+
+    .btn-success {
+        margin-left: 40px;
+    }
+</style>
+

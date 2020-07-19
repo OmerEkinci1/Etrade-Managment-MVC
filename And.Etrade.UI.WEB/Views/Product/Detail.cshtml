@@ -1,0 +1,21 @@
+﻿@model And.Etrade.Core.Model.Entity.Product
+@{
+    ViewBag.Title = "Product Details";
+}
+    <h2>Product Details</h2>
+    <div class="productBox">
+        <p class="title"> @Model.Name </p>
+        <img id="resim" src="@Model.ImageUrl" alt="Alternate Text" />
+        <p>
+            @Model.Brand
+        </p>
+        <p>
+            @Model.Price.ToString("##.## ₺")
+        </p>
+        <p id="des">
+            @Model.Description
+        </p>
+        <a class="btn btn-success" href="#"><i class="icon-eye-open"></i>  Detail</a>
+        <a class="btn btn-default" href="#"><i class=""></i>  Add to Basket</a>
+    </div>
+
