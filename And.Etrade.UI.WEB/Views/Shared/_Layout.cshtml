@@ -23,7 +23,7 @@
             </div>
             <div class="navbar-collapse collapse" style="float:left;">
                 <ul class="nav navbar-nav">
-                   @Html.Action("GetMenu", "Home");
+                    @Html.Action("GetMenu", "Home");
                 </ul>
             </div>
             <div style="float:right;color:white;padding-top:14px;">
@@ -33,8 +33,8 @@
                         <p>
                             <a href="/Member-Login">Members Login Panel</a> |
                             <a href="/Member-Register">Members Register Panel</a>
-                        </p>   
-                        
+                        </p>
+
                     }
                     else
                     {
@@ -43,7 +43,7 @@
                         <p>
                             Welcome @usr.Name @usr.LastName <br />
                             <a href="#">My Profile</a> |
-                            <a href="#">My Basket</a>|
+                            <a href="/My-Basket">My Basket</a>|
                             <a href="#">My Orders</a>|
                         </p>
                     }
@@ -60,7 +60,10 @@
         </footer>
     </div>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("script", false)
 </body>
 </html>

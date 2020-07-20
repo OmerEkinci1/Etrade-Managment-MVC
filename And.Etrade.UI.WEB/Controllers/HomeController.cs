@@ -15,6 +15,7 @@ namespace And.Etrade.UI.WEB.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.isLogin = this.isLogin;
             var data = db.Products.OrderByDescending(x => x.CreateDate).Take(5).ToList();
             return View(data);
         }
@@ -36,6 +37,7 @@ namespace And.Etrade.UI.WEB.Controllers
             var users = db.Users.Where(x => x.Email == Email && x.Password == Password && x.IsActive == true && x.IsAdmin == false).ToList();
             if (users.Count==1)
             {
+                Session["LoginUserID"] = users.FirstOrDefault().ID;
                 Session["LoginUser"] = users.FirstOrDefault();
                 return Redirect("/");
             }

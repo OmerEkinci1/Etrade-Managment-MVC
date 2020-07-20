@@ -17,6 +17,14 @@ namespace And.Etrade.UI.WEB.Controllers.Base
 
         protected override void Initialize(RequestContext requestContext)
         {
+            if (requestContext.HttpContext.Session["LoginUserID"] != null)
+            {
+                //Session["LoginUserID"]
+                //Session["LoginUser"] 
+                isLogin = true;
+                LoginUserID = (int)requestContext.HttpContext.Session["LoginUserID"];
+                LoginUserEntity = (Core.Model.Entity.User)requestContext.HttpContext.Session["LoginUser"];
+            }
             base.Initialize(requestContext);
         }
     }
