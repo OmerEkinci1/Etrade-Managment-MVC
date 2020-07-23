@@ -62,8 +62,7 @@ namespace And.Etrade.UI.WEB.Controllers
             }
             db.Orders.Add(order);
             db.SaveChanges();
-            var orderid = db.Orders.Where(x => x.UserID == LoginUserID).LastOrDefault().ID;
-            return RedirectToAction("Detail", new {id= orderid});
+            return RedirectToAction("Detail", new {id= order.ID});
         }
 
         public ActionResult Detail(int id) 
@@ -80,6 +79,16 @@ namespace And.Etrade.UI.WEB.Controllers
             var db = new AndDB();
             var data = db.Orders.Include("Status").Where(x => x.UserID == LoginUserID).ToList();
             return View(data);
+        }
+        
+        public ActionResult Pay(int id)
+        {
+            var db = new AndDB();
+            var order = db.Orders.Where(x => x.ID == id).FirstOrDefault();
+            order.StatusID = 5;
+            db.SaveChanges();
+            return RedirectToAction("Detail", new { id = order.ID });
+
         }
     }
 }
