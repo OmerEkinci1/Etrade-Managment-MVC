@@ -1,0 +1,68 @@
+﻿@model And.Etrade.Core.Model.Entity.Order
+@{
+    ViewBag.Title = "Order Detail";
+}
+
+<h2>Number: @Model.ID Order Status: @Model.Status.Name</h2>
+<hr />
+<b>Bank Informations</b>
+<table>
+    <tr>
+        <td>Bank</td>
+        <td>Bank Name</td>
+    </tr>
+    <tr>
+        <td>IBAN</td>
+        <td>TR1564184184641681035</td>
+    </tr>
+    <tr>
+        <td>Taking Name</td>
+        <td>Company Name</td>
+    </tr>
+</table>
+@{
+    if (Model.StatusID == 1)
+    {
+        <a href="/Order/Pay?id=@Model.ID" class="btn btn-success">Payment Done</a>
+    }
+}
+<hr />
+<b>Order Informations</b>
+<table>
+    <tr>
+        <td>Total</td>
+        <td>@Model.TotalPrice.ToString("##,## $")</td>
+    </tr>
+    <tr>
+        <td>Total Product</td>
+        <td>@Model.TotalProductPrice.ToString("##,## $")</td>
+    </tr>
+    <tr>
+        <td>Total Discount</td>
+        <td>@Model.TotalDiscount.ToString("##,## $")</td>
+    </tr>
+    <tr>
+        <td>Total Tax</td>
+        <td>@Model.TotalTaxPrice.ToString("##,## $")</td>
+    </tr>
+</table>
+<hr />
+<b>Products</b>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+    </tr>
+    @{
+        foreach (var item in Model.OrderProducts)
+        {
+            var p = new And.Etrade.Core.Model.AndDB().Products.Where(x => x.ID == item.ProductID).FirstOrDefault();
+            <tr>
+                <td>@p.Name</td>
+                <td>@item.Quantity</td>
+            </tr>
+
+        }
+    }
+</table>
+
